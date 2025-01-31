@@ -1,0 +1,25 @@
+create database Escuela
+Use Escuela
+create table Persona
+(
+idpersona int identity(1,1) primary key,
+[Nombre] varchar(50),
+[Apellidos] varchar(50),
+[No. Documento] varchar(11),
+[Fecha de Nacimiento] date,
+[Dirección] varchar(100),
+[Teléfono] varchar(10)
+)
+
+insert into Persona values ('Juan','Pérez','01800154987','1990-08-01','C/ Primera No. 5','8094567894')
+insert into Persona values ('Luis','Medina','01800154942','1988-10-01','C/ Primera No. 4','8098757894')
+insert into Persona values ('Ramona','López','01800154486','1995-09-01','C/ Primera No. 3','8093695894')
+insert into Persona values ('Sergio','Herrera','01800174915','1984-07-01','C/ Primera No. 2','8093217894')
+insert into Persona values ('Ernesto','Urbáez','01800104984','1982-04-01','C/ Primera No. 1','8091117894')
+insert into Persona values ('Josue','Gónzalez','01800184985','1997-05-01','C/ Primera No. 8','8090257894')
+
+create proc Mostrar_Persona
+as 
+select *from Persona
+order by Apellidos asc
+go
